@@ -1,15 +1,16 @@
 import sys
 from generator.password_generator import generate_password
 
+
 def main():
 
-    if len(sys.argv) != 2 :
+    if len(sys.argv) != 2:
         print("Formato: python main.py [longitud]")
         return 1
 
     try:
         length = int(sys.argv[1])
-    except:
+    except ValueError:
         print("Error: la longitud debe ser un número entero")
         return 2
 
@@ -20,6 +21,7 @@ def main():
     password = generate_password(length)
 
     print("Contraseña generada: ", password)
+
 
 if __name__ == "__main__":
     main()
