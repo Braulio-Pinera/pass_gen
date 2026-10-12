@@ -2,12 +2,12 @@ import string
 import random
 
 def generate_password(length = 12):
-    chars = {
+    chars = (
         string.ascii_lowercase +
         string.ascii_uppercase +
         string.digits +
         string.punctuation
-    }
+    )
 
     password = "".join(random.choice(chars) for _ in range(length))
     return password
